@@ -25,7 +25,7 @@ Para que el proyecto esté ordenado y el servidor encuentre bien las rutas, he o
 
 ### 🔗 Visita la web aquí
 
-[**Haz clic aquí para ver mi carta online**](https://cartarestaurante.free.nf/?i=1).
+[**Haz clic aquí para ver mi carta online**](https://cartarestaurante.free.nf/).
 
 -----
 
