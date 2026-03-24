@@ -1,0 +1,267 @@
+/* ============================================================
+   Estilos para la carta del restaurante
+   Le doy un toque cálido con colores crema y dorado
+   Con Bootstrap ya tengo el responsive base, aquí añado los detalles
+   ============================================================ */
+
+/* ========== FUENTES PERSONALIZADAS ========== */
+/* Usamos Poppins para el texto general y Playfair Display para títulos */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fefaf5;  /* Color crema suave como fondo */
+}
+
+h1, h2, h3, .categoria-titulo {
+    font-family: 'Playfair Display', serif;  /* Fuente elegante para títulos */
+}
+
+/* ========== CABECERA CON FOTO DE FONDO ========== */
+/* Cojo una foto de Unsplash que me gustó, la de una cocina de restaurante */
+/* Le pongo una capa negra semitransparente para que el texto se lea bien */
+.hero-section {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    min-height: 500px;
+    position: relative;
+    color: white;
+}
+
+/* Capa extra por si acaso la imagen es muy clara */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 2;  /* Para que el texto quede por encima de la capa oscura */
+}
+
+.hero-section h1 {
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    letter-spacing: 2px;
+}
+
+.hero-section .lead {
+    font-weight: 300;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+}
+
+/* Botón de "Ver la carta" - le pongo un efecto de elevación al pasar el ratón */
+.btn-outline-light {
+    border-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+    transform: translateY(-2px);  /* Efecto de elevación */
+    box-shadow: 0 4px 12px rgba(255,255,255,0.2);
+}
+
+/* ========== TÍTULOS DE CATEGORÍAS ========== */
+/* Scroll margin para que al hacer clic en "Ver la carta" no se esconda detrás del header */
+.categoria {
+    scroll-margin-top: 80px;
+}
+
+.categoria-titulo {
+    position: relative;
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #2c2b28;
+    margin-bottom: 0;
+}
+
+/* Línea decorativa que aparece debajo del título con animación */
+.titulo-decorado {
+    background: linear-gradient(120deg, #c9a03d 0%, #c9a03d 40%, transparent 40%);
+    background-repeat: no-repeat;
+    background-size: 0% 8px;
+    background-position: 0 100%;
+    padding-bottom: 8px;
+    animation: underlineAnim 0.8s ease forwards;  /* Animación al cargar */
+}
+
+@keyframes underlineAnim {
+    to {
+        background-size: 100% 8px;  /* La línea se extiende hasta el final */
+    }
+}
+
+/* ========== TARJETAS DE PLATOS ========== */
+.plato-card {
+    border-radius: 20px;
+    overflow: hidden;  /* Para que la imagen respete los bordes redondeados */
+    transition: all 0.3s ease;
+    background: white;
+}
+
+/* Efecto al pasar el ratón: la tarjeta se eleva */
+.plato-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 35px rgba(0,0,0,0.1) !important;
+}
+
+/* Contenedor de la imagen con altura fija para que todas sean iguales */
+.card-img-top-wrapper {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+    background-color: #f8f3ed;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* La imagen cubre todo el espacio sin deformarse */
+    transition: transform 0.5s ease;
+}
+
+/* Al pasar el ratón, la imagen se hace un poco más grande */
+.plato-card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+/* Placeholder para cuando no hay imagen */
+.placeholder-img {
+    height: 220px;
+    background: linear-gradient(135deg, #f5ede3 0%, #e8dfd3 100%);
+}
+
+/* Badge de plato destacado */
+.badge-destacado {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: linear-gradient(135deg, #c9a03d, #e6c88f);
+    color: #2c2b28;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    z-index: 2;
+}
+
+.badge-destacado i {
+    margin-right: 5px;
+    font-size: 0.7rem;
+}
+
+/* Estilo del precio */
+.precio-badge {
+    background: #c9a03d;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Descripción del plato */
+.descripcion {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: #6b6359;
+    min-height: 65px;  /* Altura mínima para que todas las descripciones ocupen lo mismo */
+}
+
+/* Calorías con fondo redondeado */
+.calorias {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: #faf3ea;
+    padding: 4px 12px;
+    border-radius: 30px;
+    font-size: 0.75rem;
+    color: #b87c4a;
+}
+
+/* Características: iconos en línea con fondo redondeado */
+.caracteristicas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    border-top: 1px solid #f0e5d8;
+    padding-top: 12px;
+}
+
+.caracteristicas i {
+    font-size: 1rem;
+    color: #c9a03d;
+    background: #fef5e8;
+    padding: 6px;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+/* Al pasar el ratón sobre los iconos, cambian de color y se agrandan un poco */
+.caracteristicas i:hover {
+    background: #c9a03d;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* ========== FOOTER ========== */
+footer {
+    border-top: 3px solid #c9a03d;  /* Línea dorada en la parte superior */
+}
+
+footer hr {
+    max-width: 300px;
+    margin: 1rem auto;
+}
+
+/* ========== RESPONSIVE: PANTALLAS PEQUEÑAS (MÓVIL) ========== */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 50vh;
+        min-height: 400px;
+    }
+    
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    .categoria-titulo {
+        font-size: 1.6rem;
+    }
+    
+    .card-img-top-wrapper {
+        height: 180px;
+    }
+    
+    .placeholder-img {
+        height: 180px;
+    }
+    
+    .descripcion {
+        min-height: auto;  /* En móvil no necesitamos altura mínima */
+    }
+}
+
+/* ========== RESPONSIVE: PANTALLAS MUY PEQUEÑAS ========== */
+@media (max-width: 576px) {
+    .hero-section h1 {
+        font-size: 1.8rem;
+    }
+    
+    .btn-outline-light {
+        font-size: 0.9rem;
+        padding: 8px 24px;
+    }
+}

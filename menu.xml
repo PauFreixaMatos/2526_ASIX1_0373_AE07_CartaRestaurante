@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+
+    <!-- ==================== ENTRANTES / TAPAS ==================== -->
+    
+    <plato tipo="entrantes">
+        <nombre>Anchoas con tomate</nombre>
+        <precio>1.80</precio>
+        <descripcion>Anchoas del Cantábrico sobre tomate natural aliñado con aceite de oliva</descripcion>
+        <calorias>185</calorias>
+        <imagen>img/anchoas.jpg</imagen>   
+        <caracteristicas>
+            <item>pescado</item>   <!-- Esto luego se convierte en icono de pez -->
+        </caracteristicas>
+    </plato>
+    
+    <plato tipo="entrantes">
+        <nombre>Croquetas de pollo y jamón ibérico</nombre>
+        <precio>1.80</precio>
+        <descripcion>Cremosas croquetas con pollo de corral y jamón ibérico</descripcion>
+        <calorias>210</calorias>
+        <imagen>img/croquetas.jpg</imagen>
+        <caracteristicas>
+            <item>carne</item>     <!-- Icono de muslo de pollo -->
+            <item>lacteos</item>   <!-- Icono de queso (por la bechamel) -->
+        </caracteristicas>
+    </plato>
+    
+    <plato tipo="entrantes">
+        <nombre>Buñuelos de bacalao</nombre>
+        <precio>1.90</precio>
+        <descripcion>Buñuelos de bacalao desmigado, crujientes por fuera y cremosos</descripcion>
+        <calorias>195</calorias>
+        <imagen>img/buñuelos.jpg</imagen>
+        <caracteristicas>
+            <item>pescado</item>
+        </caracteristicas>
+    </plato>
+    
+    <plato tipo="entrantes">
+        <nombre>Patatas bravas</nombre>
+        <precio>5.00</precio>
+        <descripcion>Patatas crujientes con salsa brava casera y alioli</descripcion>
+        <calorias>320</calorias>
+        <imagen>img/bravas.jpg</imagen>
+        <caracteristicas>
+            <item>vegano</item>    <!-- Icono de hoja verde -->
+            <item>picante</item>   <!-- Icono de guindilla -->
+        </caracteristicas>
+    </plato>
+    
+    <plato tipo="entrantes">
+        <nombre>Ensaladilla rusa</nombre>
+        <precio>6.50</precio>
+        <descripcion>Patata, atún, huevo, zanahoria y mayonesa casera</descripcion>
+        <calorias>280</calorias>
+        <imagen>img/ensaladilla.jpg</imagen>
+        <caracteristicas>
+            <item>pescado</item>
+            <item>lacteos</item>
+        </caracteristicas>
+    </plato>
+    
+    <plato tipo="entrantes">
+        <nombre>Sepia con mayonesa</nombre>
+        <precio>9.00</precio>
+        <descripcion>Sepia a la plancha con mayonesa de ajo asado</descripcion>
+        <calorias>190</calorias>
+        <imagen>img/sepia.jpg</imagen>
+        <caracteristicas>
+            <item>pescado</item>
+        </caracteristicas>
+    </plato>
+    
+    <plato tipo="entrantes">
+        <nombre>Oreja con emulsión de mery</nombre>
+        <precio>6.50</precio>
+        <descripcion>Oreja de cerdo crujiente con emulsión especial</descripcion>
+        <calorias>340</calorias>
+        <imagen>img/oreja.jpg</imagen>
+        <caracteristicas>
+            <item>carne</item>
+        </caracteristicas>
+    </plato>
+    
+    <plato tipo="entrantes">
+        <nombre>Rabo de cerdo</nombre>
+        <precio>6.00</precio>
+        <descripcion>Rabo de cerdo estofado a baja temperatura</descripcion>
+        <calorias>380</calorias>
+        <imagen>img/rabo.jpg</imagen>
+        <caracteristicas>
+            <item>carne</item>
+        </caracteristicas>
+    </plato>
+    
+    <plato tipo="entrantes">
+        <nombre>Calamar a la romana</nombre>
+        <precio>7.50</precio>
+        <descripcion>Calamar rebozado con mayonesa de jengibre y lima</descripcion>
+        <calorias>420</calorias>
+        <imagen>img/calamar.jpg</imagen>
+        <caracteristicas>
+            <item>pescado</item>
+        </caracteristicas>
+    </plato>
+    
+    <!-- ==================== ENSALADAS ==================== -->
+    
+    <plato tipo="ensaladas">
+        <nombre>Tomate, ventresca y cebollitas</nombre>
+        <precio>9.00</precio>
+        <descripcion>Tomate, ventresca de atún y cebollitas encurtidas</descripcion>
+        <calorias>220</calorias>
+        <imagen>img/tomate-ventresca.jpg</imagen>
+        <caracteristicas>
+            <item>pescado</item>
+        </caracteristicas>
+    </plato>
+    
+    <plato tipo="ensaladas">
+        <nombre>Burrata, rúcula y tomate seco</nombre>
+        <precio>9.00</precio>
+        <descripcion>Burrata cremosa con rúcula y tomate seco confitado</descripcion>
+        <calorias>340</calorias>
+        <imagen>img/burrata.jpg</imagen>
+        <caracteristicas>
+            <item>vegetariano</item>   <!-- Sin carne ni pescado -->
+            <item>lacteos</item>
+        </caracteristicas>
+    </plato>
+    
+    <!-- ==================== HUEVOS ==================== -->
+    
+    <plato tipo="huevos">
+        <nombre>Huevos rotos con chistorra</nombre>
+        <precio>10.00</precio>
+        <descripcion>Huevos fritos sobre patatas con chistorra navarra</descripcion>
+        <calorias>520</calorias>
+        <imagen>img/huevos-chistorra.jpg</imagen>
+        <caracteristicas>
+            <item>carne</item>
+            <item>picante</item>
+        </caracteristicas>
+    </plato>
+    
+    <plato tipo="huevos">
+        <nombre>Huevos rotos con jamón</nombre>
+        <precio>10.00</precio>
+        <descripcion>Huevos fritos con patatas y jamón ibérico</descripcion>
+        <calorias>480</calorias>
+        <imagen>img/huevos-jamon.jpg</imagen>
+        <caracteristicas>
+            <item>carne</item>
+        </caracteristicas>
+    </plato>
+    
+    <!-- ==================== BOCADILLOS ==================== -->
+    
+    <plato tipo="bocadillos">
+        <nombre>Chivito</nombre>
+        <precio>6.00</precio>
+        <descripcion>Lomo, lechuga, mayonesa, bacón y tomate</descripcion>
+        <calorias>550</calorias>
+        <imagen>img/chivito.jpg</imagen>
+        <caracteristicas>
+            <item>carne</item>
+            <item>lacteos</item>
+        </caracteristicas>
+    </plato>
+    
+    <plato tipo="bocadillos">
+        <nombre>Calamares</nombre>
+        <precio>6.00</precio>
+        <descripcion>Calamares frescos rebozados con mayonesa</descripcion>
+        <calorias>480</calorias>
+        <imagen>img/calamares-bocadillo.jpg</imagen>
+        <caracteristicas>
+            <item>pescado</item>
+        </caracteristicas>
+    </plato>
+    
+    <plato tipo="bocadillos">
+        <nombre>Ternera con queso brie</nombre>
+        <precio>7.00</precio>
+        <descripcion>Ternera, cebolla caramelizada y queso brie</descripcion>
+        <calorias>590</calorias>
+        <imagen>img/ternera-brie.jpg</imagen>
+        <caracteristicas>
+            <item>carne</item>
+            <item>lacteos</item>
+        </caracteristicas>
+    </plato>
+    
+    <!-- ==================== ARROCES ==================== -->
+    
+    <plato tipo="arroces">
+        <nombre>Pollo de corral y setas</nombre>
+        <precio>12.00</precio>
+        <descripcion>Arroz caldoso con pollo y setas. Mínimo 2 personas</descripcion>
+        <calorias>620</calorias>
+        <imagen>img/pollo-setas.jpg</imagen>
+        <caracteristicas>
+            <item>carne</item>
+            <item>sin-gluten</item>   <!-- Apto para celíacos -->
+        </caracteristicas>
+    </plato>
+    
+    <plato tipo="arroces">
+        <nombre>Marinero</nombre>
+        <precio>12.00</precio>
+        <descripcion>Arroz meloso con mariscos y pescado. Mínimo 2 personas</descripcion>
+        <calorias>580</calorias>
+        <imagen>img/marinero.jpg</imagen>
+        <caracteristicas>
+            <item>pescado</item>
+            <item>sin-gluten</item>
+        </caracteristicas>
+    </plato>
+    
+    <plato tipo="arroces">
+        <nombre>Fideuá Marinera</nombre>
+        <precio>12.00</precio>
+        <descripcion>Fideuá con mariscos y alioli. Mínimo 2 personas</descripcion>
+        <calorias>590</calorias>
+        <imagen>img/fideua.jpg</imagen>
+        <caracteristicas>
+            <item>pescado</item>
+            <item>sin-gluten</item>
+        </caracteristicas>
+    </plato>
+    
+    <!-- ==================== CARNES ==================== -->
+    
+    <plato tipo="carnes">
+        <nombre>Entrecot argentino</nombre>
+        <precio>16.00</precio>
+        <descripcion>Entrecot de 375gr a la parrilla con guarnición</descripcion>
+        <calorias>750</calorias>
+        <imagen>img/entrecot.jpg</imagen>
+        <caracteristicas>
+            <item>carne</item>
+            <item>destacado</item>   <!-- Icono de estrella, plato estrella -->
+        </caracteristicas>
+    </plato>
+    
+    <plato tipo="carnes">
+        <nombre>Chuletitas de cordero de toras</nombre>
+        <precio>15.00</precio>
+        <descripcion>Chuletitas de cordero lechal a la brasa</descripcion>
+        <calorias>680</calorias>
+        <imagen>img/chuletitas.jpg</imagen>
+        <caracteristicas>
+            <item>carne</item>
+            <item>destacado</item>
+        </caracteristicas>
+    </plato>
+    
+    <plato tipo="carnes">
+        <nombre>Embutidos de toras a la parrilla</nombre>
+        <precio>9.00</precio>
+        <descripcion>Surtido de embutidos artesanos de Torás</descripcion>
+        <calorias>540</calorias>
+        <imagen>img/embutidos.jpg</imagen>
+        <caracteristicas>
+            <item>carne</item>
+        </caracteristicas>
+    </plato>
+    
+    <!-- ==================== PESCADOS ==================== -->
+    
+    <plato tipo="pescados">
+        <nombre>Bacalao a la plancha con pisto</nombre>
+        <precio>13.00</precio>
+        <descripcion>Lomo de bacalao con pisto manchego</descripcion>
+        <calorias>420</calorias>
+        <imagen>img/bacalao.jpg</imagen>
+        <caracteristicas>
+            <item>pescado</item>
+        </caracteristicas>
+    </plato>
+    
+    <plato tipo="pescados">
+        <nombre>Pata de pulpo a la parrilla con parmentier</nombre>
+        <precio>13.00</precio>
+        <descripcion>Pata de pulpo a la brasa sobre crema de patata</descripcion>
+        <calorias>450</calorias>
+        <imagen>img/pulpo.jpg</imagen>
+        <caracteristicas>
+            <item>pescado</item>
+            <item>destacado</item>
+        </caracteristicas>
+    </plato>
+    
+    <!-- ==================== POSTRES ==================== -->
+    
+    <plato tipo="postres">
+        <nombre>Tarta de queso</nombre>
+        <precio>5.00</precio>
+        <descripcion>Tarta de queso con mermelada de frutos rojos</descripcion>
+        <calorias>410</calorias>
+        <imagen>img/tarta-queso.jpg</imagen>
+        <caracteristicas>
+            <item>lacteos</item>
+            <item>destacado</item>
+        </caracteristicas>
+    </plato>
+    
+    <plato tipo="postres">
+        <nombre>Coulant de chocolate</nombre>
+        <precio>5.00</precio>
+        <descripcion>Coulant con corazón fundido y helado</descripcion>
+        <calorias>490</calorias>
+        <imagen>img/coulant.jpg</imagen>
+        <caracteristicas>
+            <item>lacteos</item>
+        </caracteristicas>
+    </plato>
+    
+    <plato tipo="postres">
+        <nombre>Tatin de manzana</nombre>
+        <precio>5.00</precio>
+        <descripcion>Tarta de manzana caramelizada invertida</descripcion>
+        <calorias>380</calorias>
+        <imagen>img/tatin.jpg</imagen>
+        <caracteristicas>
+            <item>vegano</item>
+        </caracteristicas>
+    </plato>
+
+</menu>
