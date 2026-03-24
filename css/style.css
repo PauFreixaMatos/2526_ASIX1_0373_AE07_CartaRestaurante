@@ -1,52 +1,54 @@
 /* ============================================================
    Estilos para la carta del restaurante
-   Le doy un toque cálido con colores crema y dorado
-   Con Bootstrap ya tengo el responsive base, aquí añado los detalles
    ============================================================ */
 
-/* ========== FUENTES PERSONALIZADAS ========== */
-/* Usamos Poppins para el texto general y Playfair Display para títulos */
+/* ========== 1. FUENTES Y CONFIGURACIÓN GLOBAL ========== */
+/* Definimos la tipografia para todo el documento */
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #fefaf5;  /* Color crema suave como fondo */
+    font-family: 'Poppins', sans-serif;      /* Fuente sans-serif moderna para el texto general */
+    background-color: #fefaf5;               /* Color crema suave que no cansa la vista */
+    color: #2c2b28;                          /* Color de texto principal, ligeramente oscuro */
 }
 
+/* Los títulos utilizan una fuente serif elegante y con carácter */
 h1, h2, h3, .categoria-titulo {
-    font-family: 'Playfair Display', serif;  /* Fuente elegante para títulos */
+    font-family: 'Playfair Display', serif;
 }
 
-/* ========== CABECERA CON FOTO DE FONDO ========== */
-/* Cojo una foto de Unsplash que me gustó, la de una cocina de restaurante */
-/* Le pongo una capa negra semitransparente para que el texto se lea bien */
+/* ========== 2. CABECERA CON IMAGEN DE FONDO (HERO SECTION) ========== */
+/* La imagen de fondo es de alta calidad de Unsplash, con un degradado superpuesto para legibilidad */
 .hero-section {
+    /* Combinación de un gradiente oscuro + imagen de fondo */
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
                 url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
-    background-size: cover;
-    background-position: center;
-    height: 70vh;
-    min-height: 500px;
+    background-size: cover;                  /* La imagen cubre todo el espacio */
+    background-position: center;             /* Centramos la imagen */
+    height: 70vh;                            /* Ocupa el 70% del alto de la ventana */
+    min-height: 500px;                       /* Altura mínima para pantallas muy anchas */
     position: relative;
     color: white;
 }
 
-/* Capa extra por si acaso la imagen es muy clara */
+/* Capa adicional para oscurecer ligeramente la imagen y mejorar el contraste */
 .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.4);
+    background: rgba(0,0,0,0.4);             /* Capa negra con opacidad del 40% */
 }
 
+/* El contenedor interno necesita un z-index para estar por encima de la capa overlay */
 .hero-section .container {
     position: relative;
-    z-index: 2;  /* Para que el texto quede por encima de la capa oscura */
+    z-index: 2;
 }
 
+/* Sombra en el texto para asegurar legibilidad sobre la imagen */
 .hero-section h1 {
     text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
-    letter-spacing: 2px;
+    letter-spacing: 2px;                     /* Espaciado entre letras para un toque más elegante */
 }
 
 .hero-section .lead {
@@ -54,19 +56,13 @@ h1, h2, h3, .categoria-titulo {
     text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
 }
 
-/* Botón de "Ver la carta" - le pongo un efecto de elevación al pasar el ratón */
+/* Botón de "Ver la carta" con bordes más gruesos */
 .btn-outline-light {
     border-width: 2px;
-    transition: all 0.3s ease;
 }
 
-.btn-outline-light:hover {
-    transform: translateY(-2px);  /* Efecto de elevación */
-    box-shadow: 0 4px 12px rgba(255,255,255,0.2);
-}
-
-/* ========== TÍTULOS DE CATEGORÍAS ========== */
-/* Scroll margin para que al hacer clic en "Ver la carta" no se esconda detrás del header */
+/* ========== 3. TÍTULOS DE LAS CATEGORÍAS ========== */
+/* Scroll margin para que al hacer clic en el botón "Ver la carta" no se oculte detrás del header */
 .categoria {
     scroll-margin-top: 80px;
 }
@@ -80,37 +76,26 @@ h1, h2, h3, .categoria-titulo {
     margin-bottom: 0;
 }
 
-/* Línea decorativa que aparece debajo del título con animación */
+/* Línea decorativa debajo del título */
 .titulo-decorado {
-    background: linear-gradient(120deg, #c9a03d 0%, #c9a03d 40%, transparent 40%);
-    background-repeat: no-repeat;
-    background-size: 0% 8px;
-    background-position: 0 100%;
+    border-bottom: 3px solid #c9a03d;        /* Línea dorada sólida */
     padding-bottom: 8px;
-    animation: underlineAnim 0.8s ease forwards;  /* Animación al cargar */
+    display: inline-block;
 }
 
-@keyframes underlineAnim {
-    to {
-        background-size: 100% 8px;  /* La línea se extiende hasta el final */
-    }
-}
-
-/* ========== TARJETAS DE PLATOS ========== */
+/* ========== 4. TARJETAS DE LOS PLATOS ========== */
 .plato-card {
-    border-radius: 20px;
-    overflow: hidden;  /* Para que la imagen respete los bordes redondeados */
-    transition: all 0.3s ease;
+    border-radius: 20px;                     /* Bordes redondeados suaves */
+    overflow: hidden;                        /* Para mantener los bordes redondeados con la imagen */
     background: white;
 }
 
-/* Efecto al pasar el ratón: la tarjeta se eleva */
-.plato-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 35px rgba(0,0,0,0.1) !important;
+/* Efecto de sombra sutil para dar profundidad */
+.plato-card {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* Sombra estática */
 }
 
-/* Contenedor de la imagen con altura fija para que todas sean iguales */
+/* Contenedor de la imagen con altura fija para uniformidad */
 .card-img-top-wrapper {
     position: relative;
     height: 220px;
@@ -121,22 +106,16 @@ h1, h2, h3, .categoria-titulo {
 .card-img-top {
     width: 100%;
     height: 100%;
-    object-fit: cover;  /* La imagen cubre todo el espacio sin deformarse */
-    transition: transform 0.5s ease;
+    object-fit: cover;                       /* La imagen se recorta para llenar el contenedor sin deformarse */
 }
 
-/* Al pasar el ratón, la imagen se hace un poco más grande */
-.plato-card:hover .card-img-top {
-    transform: scale(1.05);
-}
-
-/* Placeholder para cuando no hay imagen */
+/* Placeholder visual para cuando no existe una imagen definida en el XML */
 .placeholder-img {
     height: 220px;
     background: linear-gradient(135deg, #f5ede3 0%, #e8dfd3 100%);
 }
 
-/* Badge de plato destacado */
+/* Badque de "Recomendado" para los platos destacados */
 .badge-destacado {
     position: absolute;
     top: 15px;
@@ -156,7 +135,7 @@ h1, h2, h3, .categoria-titulo {
     font-size: 0.7rem;
 }
 
-/* Estilo del precio */
+/* Estilo del precio: fondo dorado con texto blanco */
 .precio-badge {
     background: #c9a03d;
     color: white;
@@ -166,15 +145,15 @@ h1, h2, h3, .categoria-titulo {
     font-size: 0.9rem;
 }
 
-/* Descripción del plato */
+/* Descripción del plato con tamaño de letra reducido y color neutro */
 .descripcion {
     font-size: 0.85rem;
     line-height: 1.5;
     color: #6b6359;
-    min-height: 65px;  /* Altura mínima para que todas las descripciones ocupen lo mismo */
+    min-height: 65px;                        /* Altura mínima para mantener consistencia entre tarjetas */
 }
 
-/* Calorías con fondo redondeado */
+/* Bloque de calorías con aspecto de etiqueta */
 .calorias {
     display: inline-flex;
     align-items: center;
@@ -186,7 +165,7 @@ h1, h2, h3, .categoria-titulo {
     color: #b87c4a;
 }
 
-/* Características: iconos en línea con fondo redondeado */
+/* Contenedor de iconos de características (picante, vegano, etc.) */
 .caracteristicas {
     display: flex;
     flex-wrap: wrap;
@@ -195,6 +174,7 @@ h1, h2, h3, .categoria-titulo {
     padding-top: 12px;
 }
 
+/* Estilo base para cada icono de característica */
 .caracteristicas i {
     font-size: 1rem;
     color: #c9a03d;
@@ -206,19 +186,11 @@ h1, h2, h3, .categoria-titulo {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.2s ease;
 }
 
-/* Al pasar el ratón sobre los iconos, cambian de color y se agrandan un poco */
-.caracteristicas i:hover {
-    background: #c9a03d;
-    color: white;
-    transform: scale(1.1);
-}
-
-/* ========== FOOTER ========== */
+/* ========== 5. PIE DE PÁGINA (FOOTER) ========== */
 footer {
-    border-top: 3px solid #c9a03d;  /* Línea dorada en la parte superior */
+    border-top: 3px solid #c9a03d;           /* Línea decorativa dorada */
 }
 
 footer hr {
@@ -226,7 +198,8 @@ footer hr {
     margin: 1rem auto;
 }
 
-/* ========== RESPONSIVE: PANTALLAS PEQUEÑAS (MÓVIL) ========== */
+/* ========== 6. MEDIA QUERIES / RESPONSIVE ========== */
+/* Ajustes para tabletas y dispositivos medianos */
 @media (max-width: 768px) {
     .hero-section {
         height: 50vh;
@@ -250,11 +223,11 @@ footer hr {
     }
     
     .descripcion {
-        min-height: auto;  /* En móvil no necesitamos altura mínima */
+        min-height: auto;            /* Eliminamos la altura mínima en móviles para que el contenido fluya */
     }
 }
 
-/* ========== RESPONSIVE: PANTALLAS MUY PEQUEÑAS ========== */
+/* Ajustes para móviles muy pequeños */
 @media (max-width: 576px) {
     .hero-section h1 {
         font-size: 1.8rem;

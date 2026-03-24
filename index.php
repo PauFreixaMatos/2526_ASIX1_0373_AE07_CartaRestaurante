@@ -69,37 +69,37 @@ $nombresCategorias = [
 <head>
     <meta charset="UTF-8">
     <!-- Viewport necesario para que sea responsive en móviles -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Camarero! Una de mero!! - Carta del Restaurante</title>
     
-    <!-- Bootstrap 5 CSS -->
-    <!-- Usamos Bootstrap para tener un grid responsive sin tener que escribir mucho CSS -->
+    <!-- Bootstrap 5 CSS - Grid responsive sin necesidad de escribir CSS complejo -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- Google Fonts para tipografías elegantes -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Google Fonts para tipografías elegantes y profesionales -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome 6 para los iconos -->
+    <!-- Font Awesome 6 - Biblioteca completa de iconos vectoriales -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
-    <!-- AOS Library: animaciones al hacer scroll -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <!-- Nuestra hoja de estilos personalizada -->
+    <!-- Nuestra hoja de estilos personalizada (sin animaciones) -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- ==================== HEADER ==================== -->
-    <!-- Cabecera con imagen de fondo y botón para ir a la carta -->
+    <!-- ==================== HEADER / SECCIÓN HERO ==================== -->
+    <!-- Cabecera con imagen de fondo y botón de anclaje para navegar a la carta -->
     <header class="hero-section">
-        <div class="hero-overlay"></div> <!-- Capa oscura sobre la imagen para que el texto destaque -->
+        <!-- Capa oscura sobre la imagen de fondo para mejorar el contraste del texto -->
+        <div class="hero-overlay"></div>
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12 text-center">
-                    <h1 class="display-3 fw-bold" data-aos="fade-down">Camarero! Una de mero!!</h1>
-                    <p class="lead" data-aos="fade-up" data-aos-delay="200">Carta de temporada | Cocina tradicional con toques modernos</p>
-                    <div class="mt-4" data-aos="fade-up" data-aos-delay="400">
+                    <!-- Título principal con el nombre de la página web-->
+                    <h1 class="display-3 fw-bold">Camarero! Una de mero!!</h1>
+                    <!-- Subtítulo con la descripción de la carta -->
+                    <p class="lead">Carta de temporada | Cocina tradicional con toques modernos</p>
+                    <div class="mt-4">
+                        <!-- Botón que enlaza directamente a la sección de la carta -->
                         <a href="#carta" class="btn btn-outline-light btn-lg rounded-pill px-5">
                             <i class="fas fa-scroll me-2"></i>Ver la carta
                         </a>
@@ -113,13 +113,14 @@ $nombresCategorias = [
     <main id="carta" class="container py-5">
         
         <?php 
-        // Recorremos cada categoría de platos que hemos organizado antes
+        // Recorremos cada categoría de platos que hemos organizado previamente en el array $platosPorTipo
         foreach ($platosPorTipo as $tipo => $platos): 
-            // Si la categoría tiene traducción, la usamos. Si no, ponemos el nombre original con primera mayúscula
+            // Si la categoría tiene una traducción definida en el array $nombresCategorias, la usamos.
+            // Si no existe traducción, usamos mayúscula en el nombre original (ucfirst) para mostrarlo bonito.
             $titulo = $nombresCategorias[$tipo] ?? ucfirst($tipo);
         ?>
-            <!-- Cada categoría es una sección con animación al hacer scroll -->
-            <section class="categoria mb-5" data-aos="fade-up">
+            <!-- Cada categoría es una sección independiente dentro de la carta -->
+            <section class="categoria mb-5">
                 <div class="row mb-4">
                     <div class="col-12">
                         <h2 class="categoria-titulo">
@@ -128,25 +129,27 @@ $nombresCategorias = [
                     </div>
                 </div>
                 
-                <!-- Grid de Bootstrap: en móvil 1 columna, tablet 2, escritorio 3 -->
+                <!-- Grid de Bootstrap: responsive por defecto -->
+                <!-- En móvil: 1 columna | En tablet: 2 columnas | En escritorio: 3 columnas -->
                 <div class="row g-4">
                     <?php foreach ($platos as $plato): ?>
-                        <!-- Cada plato es una columna que se adapta al tamaño de pantalla -->
-                        <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+                        <!-- Cada plato se muestra dentro de una columna que se adapta al ancho de pantalla -->
+                        <div class="col-lg-4 col-md-6">
                             <div class="card plato-card h-100 border-0 shadow-sm">
                                 
-                                <!-- ========== IMAGEN DEL PLATO ========== -->
+                                <!-- ========== BLOQUE DE IMAGEN DEL PLATO ========== -->
                                 <?php if (!empty($plato->imagen) && file_exists($plato->imagen)): ?>
-                                    <!-- Si la imagen existe, la mostramos -->
+                                    <!-- Caso 1: Existe una imagen válida en la ruta especificada en el XML -->
                                     <div class="card-img-top-wrapper">
                                         <img src="<?php echo $plato->imagen; ?>" 
                                              class="card-img-top" 
                                              alt="<?php echo $plato->nombre; ?>"
-                                             onerror="this.src='img/placeholder.jpg'"> <!-- Si falla, muestra placeholder -->
+                                             onerror="this.src='img/placeholder.jpg'"> <!-- Fallback si la imagen no carga -->
                                         
-                                        <!-- Badge de destacado: si el plato tiene la característica "destacado", mostramos una estrella -->
+                                        <!-- Badge de "Recomendado" para platos destacados -->
                                         <?php 
                                         $esDestacado = false;
+                                        // Recorremos las características del plato para ver si tiene la etiqueta "destacado"
                                         foreach ($plato->caracteristicas->item as $item) {
                                             if ((string)$item == 'destacado') $esDestacado = true;
                                         }
@@ -157,7 +160,7 @@ $nombresCategorias = [
                                         <?php endif; ?>
                                     </div>
                                 <?php else: ?>
-                                    <!-- Si no hay imagen, mostramos un placeholder con icono -->
+                                    <!-- Caso 2: No hay imagen definida o la ruta no existe. Mostramos un placeholder visualmente agradable -->
                                     <div class="card-img-top-wrapper bg-light">
                                         <div class="placeholder-img d-flex align-items-center justify-content-center">
                                             <i class="fas fa-utensils fa-3x text-secondary"></i>
@@ -165,26 +168,26 @@ $nombresCategorias = [
                                     </div>
                                 <?php endif; ?>
                                 
-                                <!-- ========== CUERPO DE LA TARJETA ========== -->
+                                <!-- ========== CUERPO DE LA TARJETA CON LA INFORMACIÓN DEL PLATO ========== -->
                                 <div class="card-body">
-                                    <!-- Cabecera: nombre y precio -->
+                                    <!-- Cabecera: alineamos el nombre del plato a la izquierda y el precio a la derecha -->
                                     <div class="d-flex justify-content-between align-items-start mb-2">
                                         <h3 class="card-title h5 mb-0"><?php echo $plato->nombre; ?></h3>
                                         <span class="precio-badge"><?php echo $plato->precio; ?>€</span>
                                     </div>
                                     
-                                    <!-- Descripción del plato -->
+                                    <!-- Descripción detallada del plato -->
                                     <p class="card-text descripcion text-muted small">
                                         <?php echo $plato->descripcion; ?>
                                     </p>
                                     
-                                    <!-- Calorías con icono de fuego -->
+                                    <!-- Información calórica con icono de fuego para dar contexto visual -->
                                     <div class="calorias mb-2">
                                         <i class="fas fa-fire text-danger me-1"></i>
                                         <span class="small"><?php echo $plato->calorias; ?> kcal</span>
                                     </div>
                                     
-                                    <!-- Características: recorremos todos los <item> y los convertimos en iconos -->
+                                    <!-- Características especiales del plato (picante, vegano, sin gluten, etc.) -->
                                     <div class="caracteristicas mt-3">
                                         <?php foreach ($plato->caracteristicas->item as $item): ?>
                                             <?php echo getIcono((string)$item); ?>
@@ -200,7 +203,8 @@ $nombresCategorias = [
         
     </main>
 
-    <!-- ==================== FOOTER ==================== -->
+    <!-- ==================== FOOTER / PIE DE PÁGINA ==================== -->
+    <!-- Contiene información de contacto, horarios y notas de servicio -->
     <footer class="bg-dark text-light py-4 mt-5">
         <div class="container text-center">
             <div class="row">
@@ -228,16 +232,8 @@ $nombresCategorias = [
         </div>
     </footer>
 
-    <!-- Scripts: Bootstrap JS y AOS para animaciones -->
+    <!-- Scripts necesarios para el correcto funcionamiento de Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        // Inicializamos las animaciones AOS
-        AOS.init({
-            duration: 800,      // Duración de la animación en ms
-            once: true,        // La animación ocurre solo una vez
-            offset: 100        // Distancia desde el fondo para activar la animación
-        });
-    </script>
+    
 </body>
 </html>
