@@ -22,7 +22,7 @@ function getIcono($caracteristica) {
         'picante' => '<i class="fas fa-pepper-hot" title="Picante"></i>',
         'vegano' => '<i class="fas fa-leaf" title="Vegano"></i>',
         'vegetariano' => '<i class="fas fa-seedling" title="Vegetariano"></i>',
-        'sin-gluten' => '<i class="fas fa-wheat-slash" title="Sin gluten"></i>',
+        'sin-gluten' => '<i class="fas fa-wheat-awn-circle-exclamation" title="Sin gluten"></i>',
         'carne' => '<i class="fas fa-drumstick-bite" title="Carne"></i>',
         'pescado' => '<i class="fas fa-fish" title="Pescado"></i>',
         'lacteos' => '<i class="fas fa-cheese" title="Lácteos"></i>',
