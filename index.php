@@ -30,7 +30,7 @@ function getIcono($caracteristica) {
     ];
     
     // Si la característica existe en el array, devolvemos su icono
-    // Si no existe, devolvemos un icono genérico de utensilios
+    // Si no existe, devolvemos un icono de cubiertos por defecto
     return isset($iconos[$caracteristica]) ? $iconos[$caracteristica] : '<i class="fas fa-utensils"></i>';
 }
 
@@ -75,7 +75,7 @@ $nombresCategorias = [
     <!-- Bootstrap 5 CSS - Grid responsive sin necesidad de escribir CSS complejo -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- Google Fonts para tipografías elegantes y profesionales -->
+    <!-- Google Fonts para tipografías elegantes -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome 6 - Biblioteca completa de iconos vectoriales -->
@@ -87,7 +87,7 @@ $nombresCategorias = [
 <body>
 
     <!-- ==================== HEADER / SECCIÓN HERO ==================== -->
-    <!-- Cabecera con imagen de fondo y botón de anclaje para navegar a la carta -->
+    <!-- Cabecera con imagen de fondo y botón para ir a la carta -->
     <header class="hero-section">
         <!-- Capa oscura sobre la imagen de fondo para mejorar el contraste del texto -->
         <div class="hero-overlay"></div>
@@ -113,10 +113,11 @@ $nombresCategorias = [
     <main id="carta" class="container py-5">
         
         <?php 
-        // Recorremos cada categoría de platos que hemos organizado previamente en el array $platosPorTipo
+        // Recorremos cada categoría de platos del array $platosPorTipo
         foreach ($platosPorTipo as $tipo => $platos): 
-            // Si la categoría tiene una traducción definida en el array $nombresCategorias, la usamos.
-            // Si no existe traducción, usamos mayúscula en el nombre original (ucfirst) para mostrarlo bonito.
+            // Si la categoría tiene un nombre en el array $nombresCategorias, lo usamos.
+            // Si no existe, usamos mayúscula en el nombre original (ucfirst) para que se vea mejor.
+
             $titulo = $nombresCategorias[$tipo] ?? ucfirst($tipo);
         ?>
             <!-- Cada categoría es una sección independiente dentro de la carta -->
@@ -144,7 +145,7 @@ $nombresCategorias = [
                                         <img src="<?php echo $plato->imagen; ?>" 
                                              class="card-img-top" 
                                              alt="<?php echo $plato->nombre; ?>"
-                                             onerror="this.src='img/placeholder.jpg'"> <!-- Fallback si la imagen no carga -->
+                                             onerror="this.src='img/placeholder.jpg'"> <!-- Alternativa si la imagen no carga -->
                                         
                                         <!-- Badge de "Recomendado" para platos destacados -->
                                         <?php 
@@ -204,7 +205,7 @@ $nombresCategorias = [
     </main>
 
     <!-- ==================== FOOTER / PIE DE PÁGINA ==================== -->
-    <!-- Contiene información de contacto, horarios y notas de servicio -->
+    <!-- Contiene información de contacto, horarios y notas del servicio -->
     <footer class="bg-dark text-light py-4 mt-5">
         <div class="container text-center">
             <div class="row">
