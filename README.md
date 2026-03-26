@@ -5,7 +5,7 @@
 **Profesor:** Alberto de Santos Ontoria  
 **Alumno:** Pau Freixa Matos
 
-Este proyecto consiste en una página web dinámica que muestra la carta completa de un restaurante. La principal característica es que la información de los platos no está escrita directamente en el HTML, sino que se gestiona de forma externa mediante un archivo **XML**, el cual es procesado y mostrado en pantalla utilizando **PHP**.
+Este proyecto consiste en una página web que muestra la carta completa de un restaurante. La principal característica es que la información de los platos no está escrita directamente en el HTML, sino que se gestiona de forma externa mediante un archivo **XML**, el cual es procesado y mostrado en pantalla utilizando **PHP**.
 
 ### 🌿 Estructura del proyecto
 
